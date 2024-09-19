@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF">
+
+    <!-- Top bar layout -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/button_color"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:contentDescription="@string/juste_une_icone"
+            android:gravity="end"
+            android:padding="10dp"
+            android:src="@drawable/fleche_left"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Créer votre Memory"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:fontFamily="@font/dm_medium"/>
+
+    </LinearLayout>
+    
+
+    
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/titre_du_souvenir"
+        android:textSize="18sp"
+        android:layout_below="@+id/top_bar"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:boxStrokeColor="@color/colorPrimary"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text_title"
+        android:layout_marginTop="5dp"
+        android:hint="@string/description"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:boxStrokeColor="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/edit_text_description"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/ajouter_une_image_ou_une_vid_o"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:src="@android:drawable/ic_menu_camera" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/video_View"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        android:layout_below="@+id/button_save"
+        android:contentDescription="@string/ajouter_une_image_ou_une_vid_o"
+        android:src="@android:drawable/presence_video_online"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_select_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/image_view"
+        android:text="@string/choisir_une_photo"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/photo_add2"
+        app:iconPadding="8dp"
+        android:background="@color/button_color"
+        app:backgroundTint="@color/button_color"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_select_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/button_select_image"
+        android:text="@string/choisir_une_vid_o"
+        android:layout_marginTop="8dp"
+        app:icon="@drawable/video_add"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/button_color"
+        app:backgroundTint="@color/button_color"
+        app:iconPadding="8dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <Spinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_select_video"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:padding="10dp"
+        android:spinnerMode="dropdown"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:background="@color/button_color"
+        app:backgroundTint="@color/button_color"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/date_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categorySpinner"
+        android:layout_marginTop="5dp"
+        android:hint="@string/date_yyyy_mm_dd"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:inputType="date"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        app:boxStrokeColor="@color/colorPrimary" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/location_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_edit_text"
+        android:layout_marginTop="10dp"
+        android:text="@string/ajouter_une_localisation"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:icon="@drawable/local"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        app:iconPadding="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/set_reminder_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_button"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:icon="@drawable/icone_calendar"
+        android:text="Ajouter un Rappel" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_save"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        android:layout_below="@+id/set_reminder_button"
+        android:background="@color/button_color"
+        android:gravity="center"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/enregistrer"
+        app:backgroundTint="@color/button_color"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

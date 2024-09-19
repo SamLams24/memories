@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <!--app:cardBackgroundColor="@color/cardColor" -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardBackgroundColor="@color/button_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+    <!-- res/layout/item_memory.xml -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/memory_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:paddingEnd="90dp"
+                        android:textColor="@color/black"
+                        android:text="@string/titre_memory" />
+
+                    <TextView
+                        android:id="@+id/memory_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_gravity="end"
+                        android:gravity="end"
+                        android:textColor="@color/black"
+                        android:text="@string/date_publication"
+                        tools:ignore="RtlSymmetry" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/memory_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:text="@string/description_memory"/>
+
+                <TextView
+                    android:id="@+id/location_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/localisation"
+                    android:textColor="@color/black"
+                    android:paddingTop="8dp" />
+
+                <ImageView
+                    android:id="@+id/memory_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/image_ou_video_souvenir_memory"
+                    android:visibility="gone"/>
+
+                <com.google.android.exoplayer2.ui.PlayerView
+                    android:id="@+id/player_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:visibility="gone" />
+
+                <!-- Boutons pour la modification et la suppression -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end">
+
+                    <ImageButton
+                        android:id="@+id/edit_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_menu_edit"
+                        android:contentDescription="@string/edit"
+                        android:padding="8dp" />
+
+                    <ImageButton
+                        android:id="@+id/delete_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_menu_delete"
+                        android:contentDescription="@string/delete"
+                        android:padding="8dp" />
+                    <ImageButton
+                        android:id="@+id/share_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_partage" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

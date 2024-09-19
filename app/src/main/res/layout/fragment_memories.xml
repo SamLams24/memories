@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image_9"
+    tools:context=".MemoriesFragment">
+
+    <!-- Top bar layout -->
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/memories_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:contentDescription="@string/juste_une_icone"
+            android:gravity="end"
+            android:padding="10dp"
+            android:src="@drawable/fleche_left"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+    <!-- Center text layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="@string/memories"
+        android:textColor="@color/white"
+        android:fontFamily="@font/dancing_bold"
+        android:textSize="40sp"
+        android:layout_marginTop="1dp"
+        android:id="@+id/memories_text"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!-- Main content layout  <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Rechercher un souvenir..." /> -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/round_border"
+        android:id="@+id/main_content"
+        app:layout_constraintTop_toBottomOf="@+id/memories_text"
+        app:layout_constraintBottom_toTopOf="@+id/button_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="5dp" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_memory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="end"
+            android:src="@android:drawable/ic_input_add"
+            android:background="@color/button_color"
+            app:backgroundTint="@color/button_color"
+            android:contentDescription="@string/un_petit_bouton_material_design" />
+    </LinearLayout>
+
+    <!-- Bottom button layout -->
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/memories_corporation_teams"
+            android:textStyle="bold"
+            android:fontFamily="@font/dancing_bold"
+            android:padding="12dp"/>
+
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
